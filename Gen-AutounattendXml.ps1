@@ -1,3 +1,14 @@
+<#
+```bat
+powershell -ExecutionPolicy Bypass -File .\Gen-AutounattendXml.ps1 <template_name> <image_name>
+```
+
+```ps1
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Bypass
+.\Gen-AutounattendXml.ps1 <template_name> <image_name>
+```
+#>
+
 param (
   [Parameter(Mandatory = $true)][string]$template_name,
   [Parameter(Mandatory = $true)][string]$image_name

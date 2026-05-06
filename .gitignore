@@ -1,0 +1,7 @@
+*.iso
+*.vdi
+.env
+autounattend.xml
+*.bak
+build/*
+!.gitkeep

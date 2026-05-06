@@ -26,7 +26,7 @@ try {
 
   $ToTitleCase = { param($s) "$($s.Substring(0, 1).ToUpper())$($s.Substring(1))" }
 
-  $qs = @{}
+  $qs = [ordered]@{}
   foreach ($line in Get-Content "$PSScriptRoot\$template_name.ini") {
     $line = $line.Replace('(^\s+|\s+$)', '')
     $k, $v = $line -split '='
@@ -43,8 +43,9 @@ try {
 
   $url = 'https://schneegans.de/windows/unattend-generator/view/?'
   foreach ($k in $qs.GetEnumerator()) {
-    $url = "$url&$($k.Key)=$([System.Web.HttpUtility]::UrlEncode($k.Value))"
+    $url = "$url$($k.Key)=$([System.Web.HttpUtility]::UrlEncode($k.Value))&"
   }
+  $url = $url.Substring(0, $url.Length - 1) # remove trailing &
   # argument "-UseBasicParsing" added after system update (see https://www.bleepingcomputer.com/news/security/microsoft-windows-powershell-now-warns-when-running-invoke-webrequest-scripts/)
   [System.IO.File]::WriteAllText("$template_name.xml", (Invoke-WebRequest -UseBasicParsing $url).Content, $utf8)
 } finally {

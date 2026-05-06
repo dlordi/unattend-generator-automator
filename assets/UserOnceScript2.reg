@@ -1,0 +1,6 @@
+Windows Registry Editor Version 5.00
+
+; These scripts will run whenever a user logs on for the first time.
+
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+; "ScreenSaverIsSecure"="1"

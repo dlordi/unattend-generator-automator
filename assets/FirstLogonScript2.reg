@@ -1,0 +1,14 @@
+Windows Registry Editor Version 5.00
+
+; These scripts will run when the first user logs on after Windows has been installed.
+
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+; "ScreenSaverIsSecure"="1"
+
+; enable auto logon
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon]
+; remove logon count set by autounattend (but leave all other settings used to enable auto logon, whichever they are...)
+"AutoLogonCount"=-
+; "AutoAdminLogon"="1"
+; "DefaultUserName"="__THE_USER_NAME__"
+; "DefaultPassword"="__THE_USER_PASSWORD__"

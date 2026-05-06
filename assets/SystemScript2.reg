@@ -1,0 +1,6 @@
+Windows Registry Editor Version 5.00
+
+; These scripts will run in the system context, before user accounts are created.
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Remote Assistance]
+; "fAllowToGetHelp"=dword:00000000

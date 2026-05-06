@@ -1,0 +1,6 @@
+Windows Registry Editor Version 5.00
+
+; Use these scripts to modify the default user's registry hive.
+
+[HKEY_USERS\DefaultUser\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+; "ShowTaskViewButton"=dword:00000000

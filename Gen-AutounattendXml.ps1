@@ -57,6 +57,8 @@ New-SSHKeys -Path $ssh_key_path
   # only replace placeholder values which are not in the URL
   $_. `
     Replace("$fake_product_key", $env:PRODUCT_KEY). `
+    # the computer name placeholder has been chosen so that the web site won't complain
+    Replace('<ComputerName>T-COMPUTER-NAME</ComputerName>', "<ComputerName>$env:THE_COMPUTER_NAME</ComputerName>"). `
     Replace('"__THE_WIFI_NAME__"', "`"$env:THE_WIFI_NAME`""). `
     Replace('&lt;name&gt;__THE_WIFI_NAME__&lt;/name&gt;', "&lt;name&gt;$env:THE_WIFI_NAME&lt;/name&gt;"). `
     Replace("&lt;hex&gt;$wifi_name_hex&lt;/hex&gt;", "&lt;hex&gt;$real_hex&lt;/hex&gt;"). `

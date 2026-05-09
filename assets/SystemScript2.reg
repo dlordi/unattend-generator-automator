@@ -4,3 +4,8 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Remote Assistance]
 ; "fAllowToGetHelp"=dword:00000000
+
+; enable verbose messages during Windows boot and shutdown
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+"VerboseStatus"=dword:00000001
+"DisableStatusMessages"=-

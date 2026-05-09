@@ -1,0 +1,1027 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unattend xmlns="urn:schemas-microsoft-com:unattend" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State">
+	<!--https://schneegans.de/windows/unattend-generator/?LanguageMode=Unattended&UILanguage=it-IT&GeoLocation=118&Locale=it-IT&Keyboard=00000410&PEMode=Generated&InstallFromMode=Name&InstallFromName=__THE_IMAGE_NAME__&PartitionMode=Unattended&TargetDisk=0&PartitionLayout=MBR&RecoveryMode=Partition&RecoverySize=1000&DiskAssertionMode=Generated&AssertMinSize=100&AssertMaxSize=4000&WindowsEditionMode=Firmware&ProcessorArchitecture=amd64&ComputerNameMode=Custom&ComputerName=T-COMPUTER-NAME&TimeZoneMode=Implicit&UserAccountMode=Unattended&AccountName0=__THE_USER_NAME__&AccountDisplayName0=&AccountPassword0=__THE_USER_PASSWORD__&AccountGroup0=Administrators&AutoLogonMode=Own&PasswordExpirationMode=Unlimited&LockoutMode=Default&HideFiles=None&ShowFileExtensions=true&ClassicContextMenu=true&LaunchToThisPC=true&ShowEndTask=true&TaskbarSearch=Hide&TaskbarIconsMode=Empty&DisableWidgets=true&LeftTaskbar=true&HideTaskViewButton=true&DisableBingResults=true&StartTilesMode=Empty&StartPinsMode=Empty&DisableSmartScreen=true&DisableFastStartup=true&EnableLongPaths=true&EnableRemoteDesktop=true&TurnOffSystemSounds=true&DisableAppSuggestions=true&HideEdgeFre=true&DisableEdgeStartupBoost=true&DeleteWindowsOld=true&EffectsMode=Default&DeleteEdgeDesktopIcon=true&DesktopIconsMode=Default&StartFoldersMode=Default&WifiMode=Unattended&WifiName=__THE_WIFI_NAME__&WifiAuthentication=WPA2PSK&WifiPassword=__THE_WIFI_PASSWORD__&ExpressSettings=DisableAll&LockKeysMode=Skip&StickyKeysMode=Disabled&ColorMode=Custom&SystemColorTheme=Dark&AppsColorTheme=Dark&AccentColor=%230078d4&WallpaperMode=Solid&WallpaperColor=%23000000&LockScreenMode=Default&Remove3DViewer=true&RemoveBingSearch=true&RemoveClipchamp=true&RemoveCopilot=true&RemoveCortana=true&RemoveDevHome=true&RemoveFamily=true&RemoveFeedbackHub=true&RemoveMixedReality=true&RemoveNews=true&RemoveOneDrive=true&RemoveOneNote=true&RemovePaint3D=true&RemovePeople=true&RemovePowerAutomate=true&RemovePowerShell2=true&RemoveSkype=true&RemoveWallet=true&RemoveWeather=true&RemoveXboxApps=true&RemoveYourPhone=true&SystemScriptType0=Cmd&SystemScript0=%40REM+These+scripts+will+run+in+the+system+context%2c+before+user+accounts+are+created.%0a%0a%40REM+powercfg.exe+%2fHIBERNATE+OFF%0a&SystemScriptType1=Ps1&SystemScript1=%23+These+scripts+will+run+in+the+system+context%2c+before+user+accounts+are+created.%0a%0a%23+Set-MpPreference+-DisableRealtimeMonitoring+%24true%3b%0a%0aforeach+(%24file_path+in+%40(%0a%09%09%23+%22%24env%3aPUBLIC%22+is+the+home+directory+of+a+generic%2c+public+user+profile%0a%09%09%22%24env%3aPUBLIC%5cDesktop%5cdesktop.ini%22%2c+%23+desktop%3a+delete+annoying+and+useless+desktop.ini+hidden+files%0a%09%09%22%24env%3aPUBLIC%5cDesktop%5cMicrosoft+Edge.lnk%22+%23+desktop%3a+delete+shortcut+to+Edge%0a%09))+%7b%0a%09if+(Test-Path+%24file_path)+%7b%0a%09%09Remove-Item+-Force+%24file_path%0a%09%7d%0a%7d%0a&SystemScriptType2=Reg&SystemScript2=Windows+Registry+Editor+Version+5.00%0a%0a%3b+These+scripts+will+run+in+the+system+context%2c+before+user+accounts+are+created.%0a%0a%5bHKEY_LOCAL_MACHINE%5cSYSTEM%5cCurrentControlSet%5cControl%5cRemote+Assistance%5d%0a%3b+%22fAllowToGetHelp%22%3ddword%3a00000000%0a&SystemScriptType3=Vbs&SystemScript3=%27+These+scripts+will+run+in+the+system+context%2c+before+user+accounts+are+created.%0a%0a%27+WScript.Echo+%22Hello!%22%0a&DefaultUserScriptType0=Reg&DefaultUserScript0=Windows+Registry+Editor+Version+5.00%0a%0a%3b+Use+these+scripts+to+modify+the+default+user%27s+registry+hive.%0a%0a%5bHKEY_USERS%5cDefaultUser%5cSOFTWARE%5cMicrosoft%5cWindows%5cCurrentVersion%5cExplorer%5cAdvanced%5d%0a%3b+%22ShowTaskViewButton%22%3ddword%3a00000000%0a&DefaultUserScriptType1=Cmd&DefaultUserScript1=%40REM+Use+these+scripts+to+modify+the+default+user%27s+registry+hive.%0a%0a%40REM+reg.exe+add+%22HKU%5cDefaultUser%5cSOFTWARE%5cMicrosoft%5cWindows%5cCurrentVersion%5cExplorer%5cAdvanced%22+%2fv+%22ShowTaskViewButton%22+%2ft+REG_DWORD+%2fd+0+%2ff%0a&DefaultUserScriptType2=Ps1&DefaultUserScript2=%23+Use+these+scripts+to+modify+the+default+user%27s+registry+hive.%0a%0a%23+Set-ItemProperty+-LiteralPath+%22Registry%3a%3aHKU%5cDefaultUser%5cSOFTWARE%5cMicrosoft%5cWindows%5cCurrentVersion%5cExplorer%5cAdvanced%22+-Name+%22ShowTaskViewButton%22+-Type+%22DWord%22+-Value+0%3b%0a&FirstLogonScriptType0=Cmd&FirstLogonScript0=%40REM+These+scripts+will+run+when+the+first+user+logs+on+after+Windows+has+been+installed.%0a%0a%40REM+setx.exe+DIRCMD+%22%2fA+%2fO%3aGN+%2fC+%2fN%22%0a&FirstLogonScriptType1=Ps1&FirstLogonScript1=%23+These+scripts+will+run+when+the+first+user+logs+on+after+Windows+has+been+installed.%0a%0a%23+Set-WinHomeLocation+-GeoId+94%3b%0a%0aforeach+(%24file_path+in+%40(%0a%09%09%22%24env%3aUSERPROFILE%5cDesktop%5cdesktop.ini%22+%23+desktop%3a+delete+annoying+and+useless+desktop.ini+hidden+files%0a%09%09%22%24env%3aUSERPROFILE%5cDesktop%5cMicrosoft+Edge.lnk%22+%23+desktop%3a+delete+shortcut+to+Edge%0a%09))+%7b%0a%09if+(Test-Path+%24file_path)+%7b%0a%09%09Remove-Item+-Force+%24file_path%0a%09%7d%0a%7d%0a&FirstLogonScriptType2=Reg&FirstLogonScript2=Windows+Registry+Editor+Version+5.00%0a%0a%3b+These+scripts+will+run+when+the+first+user+logs+on+after+Windows+has+been+installed.%0a%0a%5bHKEY_CURRENT_USER%5cControl+Panel%5cDesktop%5d%0a%3b+%22ScreenSaverIsSecure%22%3d%221%22%0a%0a%3b+enable+auto+logon%0a%5bHKEY_LOCAL_MACHINE%5cSOFTWARE%5cMicrosoft%5cWindows+NT%5cCurrentVersion%5cWinlogon%5d%0a%3b+remove+logon+count+set+by+autounattend+(but+leave+all+other+settings+used+to+enable+auto+logon%2c+whichever+they+are...)%0a%22AutoLogonCount%22%3d-%0a%3b+%22AutoAdminLogon%22%3d%221%22%0a%3b+%22DefaultUserName%22%3d%22__THE_USER_NAME__%22%0a%3b+%22DefaultPassword%22%3d%22__THE_USER_PASSWORD__%22%0a%0a%3b+enable+verbose+messages+during+startup%2fshutdown%0a%5bHKEY_LOCAL_MACHINE%5cSOFTWARE%5cMicrosoft%5cWindows%5cCurrentVersion%5cPolicies%5cSystem%5d%0a%22VerboseStatus%22%3ddword%3a00000001%0a%22DisableStatusMessages%22%3d-%0a&FirstLogonScriptType3=Vbs&FirstLogonScript3=%27+These+scripts+will+run+when+the+first+user+logs+on+after+Windows+has+been+installed.%0a%0a%27+WScript.Echo+%22Hello!%22%0a&UserOnceScriptType0=Cmd&UserOnceScript0=%40REM+These+scripts+will+run+whenever+a+user+logs+on+for+the+first+time.%0a%0a%40REM+setx.exe+DIRCMD+%22%2fA+%2fO%3aGN+%2fC+%2fN%22%0a&UserOnceScriptType1=Ps1&UserOnceScript1=%23+These+scripts+will+run+whenever+a+user+logs+on+for+the+first+time.%0a%0a%23+Set-WinHomeLocation+-GeoId+94%3b%0a&UserOnceScriptType2=Reg&UserOnceScript2=Windows+Registry+Editor+Version+5.00%0a%0a%3b+These+scripts+will+run+whenever+a+user+logs+on+for+the+first+time.%0a%0a%5bHKEY_CURRENT_USER%5cControl+Panel%5cDesktop%5d%0a%3b+%22ScreenSaverIsSecure%22%3d%221%22%0a&UserOnceScriptType3=Vbs&UserOnceScript3=%27+These+scripts+will+run+whenever+a+user+logs+on+for+the+first+time.%0a%0a%27+WScript.Echo+%22Hello!%22%0a&RestartExplorer=true&WdacMode=Skip&AppLockerMode=Skip-->
+	<settings pass="offlineServicing"></settings>
+	<settings pass="windowsPE">
+		<component name="Microsoft-Windows-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+			<RunSynchronous>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>1</Order>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:@echo off&amp;echo:call :print ^"Setting keyboard layout for PE session^"&amp;echo:wpeutil.exe SetKeyboardLayout 0410:00000410&amp;echo:for ^%^%d in (C D E F G H I J K L M N O P Q T U V X Y Z^) do ()</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>2</Order>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:if exist ^%^%d:\sources\install.wim set ^"IMAGE_FILE=^%^%d:\sources\install.wim^"&amp;echo:if exist ^%^%d:\sources\install.esd set ^"IMAGE_FILE=^%^%d:\sources\install.esd^")</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>3</Order>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:if exist ^%^%d:\sources\install.swm set ^"IMAGE_FILE=^%^%d:\sources\install.swm^" ^&amp; set ^"SWM_PARAM=/SWMFile:^%^%d:\sources\install*.swm^"&amp;echo:if exist ^%^%d:\autounattend.xml set ^"XML_FILE=^%^%d:\autounattend.xml^")</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>4</Order>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:if exist ^%^%d:\$OEM$ set ^"OEM_FOLDER=^%^%d:\$OEM$^"&amp;echo:if exist ^%^%d:\$WinPEDriver$ set ^"PEDRIVERS_FOLDER=^%^%d:\$WinPEDriver$^"&amp;echo:^))</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>5</Order>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:for /f ^"tokens=3^" ^%^%t in ('reg.exe query HKLM\System\Setup /v UnattendFile 2^^^&gt;nul'^) do ( if exist ^%^%t set ^"XML_FILE=^%^%t^" ^))</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>6</Order>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:if not defined IMAGE_FILE call :fail ^"Could not locate install.wim, install.esd or install.swm.^"&amp;echo:if not defined XML_FILE call :fail ^"Could not locate autounattend.xml.^"&amp;echo:set ^"OS_VERSION=11^")</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>7</Order>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:for /f ^"tokens=3 delims=.^" ^%^%v in ('ver'^) do (&amp;echo:if ^%^%v LSS 20000 set ^"OS_VERSION=10^"&amp;echo:^)&amp;echo:if defined PEDRIVERS_FOLDER (&amp;echo:call :print ^"Loading drivers from $WinPEDriver$ folder^")</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>8</Order>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:for /R ^%PEDRIVERS_FOLDER^% ^%^%f IN (*.inf^) do drvload.exe ^"^%^%f^"&amp;echo:^)&amp;echo:@^&gt;X:\assert.vbs (&amp;echo:echo:Function Fail(message^^^)&amp;echo:echo:WScript.Echo message&amp;echo:echo:WScript.Quit 1&amp;echo:echo:End Function)</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>9</Order>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:echo:On Error Resume Next&amp;echo:echo:Set wmi = GetObject(^^^"winmgmts:\\.\root\cimv2^^^"^^^)&amp;echo:echo:Set drive = wmi.Get(^^^"Win32_DiskDrive.DeviceID='\\.\PHYSICALDRIVE0'^^^"^^^)&amp;echo:echo:If Err.Number ^^^&lt;^^^&gt; 0 Then)</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>10</Order>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:echo:Fail ^^^"Could not locate disk 0 (^^^" ^^^&amp; Err.Description ^^^&amp; ^^^"^^^).^^^"&amp;echo:echo:End If&amp;echo:echo:actual = CInt( drive.Size / 1024 / 1024 / 1024 ^^^)&amp;echo:echo:expected = 100)</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>11</Order>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:echo:If actual ^^^&lt; expected Then&amp;echo:echo:Fail ^^^"Size of disk 0 is expected to be at least ^^^" ^^^&amp; expected ^^^&amp; ^^^" GiB, but actually is ^^^" ^^^&amp; actual ^^^&amp; ^^^" GiB.^^^"&amp;echo:echo:End If)</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>12</Order>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:echo:actual = CInt( drive.Size / 1024 / 1024 / 1024 ^^^)&amp;echo:echo:expected = 4000&amp;echo:echo:If actual ^^^&gt; expected Then)</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>13</Order>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:echo:Fail ^^^"Size of disk 0 is expected to be at most ^^^" ^^^&amp; expected ^^^&amp; ^^^" GiB, but actually is ^^^" ^^^&amp; actual ^^^&amp; ^^^" GiB.^^^"&amp;echo:echo:End If&amp;echo:echo:WScript.Echo ^^^"Disk assertions were satisfied.^^^")</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>14</Order>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:echo:WScript.Quit 0&amp;echo:^)&amp;echo:call :print ^"Running disk assertions^")</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>15</Order>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:cscript.exe //E:vbscript ^"X:\assert.vbs^" //Nologo ^|^| call :fail ^"Disk assertion failed. Windows Setup will halt to avoid potential data loss.^"&amp;echo:@^&gt;X:\diskpart.txt (&amp;echo:echo:SELECT DISK=0&amp;echo:echo:CLEAN)</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>16</Order>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:echo:CREATE PARTITION PRIMARY SIZE=100&amp;echo:echo:FORMAT QUICK FS=NTFS LABEL=^^^"System Reserved^^^"&amp;echo:echo:ASSIGN LETTER=S&amp;echo:echo:ACTIVE&amp;echo:echo:CREATE PARTITION PRIMARY&amp;echo:echo:SHRINK MINIMUM=1000)</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>17</Order>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:echo:FORMAT QUICK FS=NTFS LABEL=^^^"Windows^^^"&amp;echo:echo:ASSIGN LETTER=W&amp;echo:echo:CREATE PARTITION PRIMARY&amp;echo:echo:FORMAT QUICK FS=NTFS LABEL=^^^"Recovery^^^"&amp;echo:echo:ASSIGN LETTER=R&amp;echo:echo:SET ID=27&amp;echo:^))</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>18</Order>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:call :print ^"diskpart will now partition and format your disk^"&amp;echo:diskpart.exe /s X:\diskpart.txt ^|^| call :fail ^"diskpart.exe encountered an error.^"&amp;echo:set ^"IMG_PARAM=/Name:^"__THE_IMAGE_NAME__^"^")</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>19</Order>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:call :print ^"Applying Windows image to target disk^"&amp;echo:dism.exe /Apply-Image /ImageFile:^%IMAGE_FILE^% ^%SWM_PARAM^% ^%IMG_PARAM^% /ApplyDir:W:\ /CheckIntegrity /Verify ^|^| call :fail ^"dism.exe encountered an error.^")</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>20</Order>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:call :print ^"Making system partition bootable^"&amp;echo:bcdboot.exe W:\Windows /s S: ^|^| call :fail ^"bcdboot.exe encountered an error.^"&amp;echo:call :print ^"Copying answer file to target disk^"&amp;echo:mkdir W:\Windows\Panther)</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>21</Order>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:copy ^%XML_FILE^% W:\Windows\Panther\unattend.xml&amp;echo:if defined PEDRIVERS_FOLDER (&amp;echo:call :print ^"Adding drivers from $WinPEDriver$ folder to new installation^")</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>22</Order>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:dism.exe /Add-Driver /Image:W:\ /Driver:^"^%PEDRIVERS_FOLDER^%^" /Recurse&amp;echo:^)&amp;echo:call :print ^"Setting device setup region to Italy (GeoID 118^)^"&amp;echo:reg.exe LOAD HKLM\mount W:\Windows\System32\config\SOFTWARE)</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>23</Order>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:reg.exe ADD ^"HKLM\mount\Microsoft\Windows\CurrentVersion\Control Panel\DeviceRegion^" /v DeviceRegion /t REG_DWORD /d 118 /f&amp;echo:reg.exe UNLOAD HKLM\mount&amp;echo:call :print ^"Computer will now reboot^")</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>24</Order>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:wpeutil.exe reboot&amp;echo:goto :eof&amp;echo::fail&amp;echo:echo:&amp;echo:echo:Fatal error: ^%~1&amp;echo:echo:&amp;echo:pause&amp;echo:exit 1&amp;echo::print&amp;echo:echo:&amp;echo:echo:*** ^%~1 ***&amp;echo:echo:&amp;echo:goto :eof)</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>25</Order>
+					<Path>cmd.exe /c "X:\pe.cmd"</Path>
+				</RunSynchronousCommand>
+			</RunSynchronous>
+		</component>
+	</settings>
+	<settings pass="generalize"></settings>
+	<settings pass="specialize">
+		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+			<ComputerName>T-COMPUTER-NAME</ComputerName>
+		</component>
+		<component name="Microsoft-Windows-Deployment" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+			<RunSynchronous>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>1</Order>
+					<Path>powershell.exe -WindowStyle "Normal" -NoProfile -Command "$xml = [xml]::new(); $xml.Load('C:\Windows\Panther\unattend.xml'); $sb = [scriptblock]::Create( $xml.unattend.Extensions.ExtractScript ); Invoke-Command -ScriptBlock $sb -ArgumentList $xml;"</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>2</Order>
+					<Path>powershell.exe -WindowStyle "Normal" -ExecutionPolicy "Unrestricted" -NoProfile -File "C:\Windows\Setup\Scripts\Specialize.ps1"</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>3</Order>
+					<Path>reg.exe load "HKU\DefaultUser" "C:\Users\Default\NTUSER.DAT"</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>4</Order>
+					<Path>powershell.exe -WindowStyle "Normal" -ExecutionPolicy "Unrestricted" -NoProfile -File "C:\Windows\Setup\Scripts\DefaultUser.ps1"</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>5</Order>
+					<Path>reg.exe unload "HKU\DefaultUser"</Path>
+				</RunSynchronousCommand>
+			</RunSynchronous>
+		</component>
+	</settings>
+	<settings pass="auditSystem"></settings>
+	<settings pass="auditUser"></settings>
+	<settings pass="oobeSystem">
+		<component name="Microsoft-Windows-International-Core" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+			<InputLocale>0410:00000410</InputLocale>
+			<SystemLocale>it-IT</SystemLocale>
+			<UILanguage>it-IT</UILanguage>
+			<UserLocale>it-IT</UserLocale>
+		</component>
+		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+			<UserAccounts>
+				<LocalAccounts>
+					<LocalAccount wcm:action="add">
+						<Name>__THE_USER_NAME__</Name>
+						<DisplayName></DisplayName>
+						<Group>Administrators</Group>
+						<Password>
+							<Value>__THE_USER_PASSWORD__</Value>
+							<PlainText>true</PlainText>
+						</Password>
+					</LocalAccount>
+				</LocalAccounts>
+			</UserAccounts>
+			<AutoLogon>
+				<Username>__THE_USER_NAME__</Username>
+				<Enabled>true</Enabled>
+				<LogonCount>1</LogonCount>
+				<Password>
+					<Value>__THE_USER_PASSWORD__</Value>
+					<PlainText>true</PlainText>
+				</Password>
+			</AutoLogon>
+			<OOBE>
+				<ProtectYourPC>3</ProtectYourPC>
+				<HideEULAPage>true</HideEULAPage>
+				<HideOnlineAccountScreens>false</HideOnlineAccountScreens>
+			</OOBE>
+			<FirstLogonCommands>
+				<SynchronousCommand wcm:action="add">
+					<Order>1</Order>
+					<CommandLine>powershell.exe -WindowStyle "Normal" -ExecutionPolicy "Unrestricted" -NoProfile -File "C:\Windows\Setup\Scripts\FirstLogon.ps1"</CommandLine>
+				</SynchronousCommand>
+			</FirstLogonCommands>
+		</component>
+	</settings>
+	<Extensions xmlns="https://schneegans.de/windows/unattend-generator/">
+		<Build>
+			<Commit>
+				<Hash>3067ee0fd3cc3fdd956bf88d16cff21b0dfea16f</Hash>
+				<GitHubUrl>https://github.com/cschneegans/unattend-generator/commit/3067ee0fd3cc3fdd956bf88d16cff21b0dfea16f</GitHubUrl>
+			</Commit>
+		</Build>
+		<ExtractScript>
+param(
+    [xml] $Document
+);
+
+foreach( $file in $Document.unattend.Extensions.File ) {
+    $path = [System.Environment]::ExpandEnvironmentVariables( $file.GetAttribute( 'path' ) );
+    mkdir -Path( $path | Split-Path -Parent ) -ErrorAction 'SilentlyContinue';
+    $encoding = switch( [System.IO.Path]::GetExtension( $path ) ) {
+        { $_ -in '.ps1', '.xml' } { [System.Text.Encoding]::UTF8; }
+        { $_ -in '.reg', '.vbs', '.js' } { [System.Text.UnicodeEncoding]::new( $false, $true ); }
+        default { [System.Text.Encoding]::Default; }
+    };
+    $bytes = $encoding.GetPreamble() + $encoding.GetBytes( $file.InnerText.Trim() );
+    [System.IO.File]::WriteAllBytes( $path, $bytes );
+}
+		</ExtractScript>
+		<File path="C:\Windows\Setup\Scripts\RemovePackages.ps1">
+$selectors = @(
+	'Microsoft.Microsoft3DViewer';
+	'Microsoft.BingSearch';
+	'Clipchamp.Clipchamp';
+	'Microsoft.Copilot';
+	'Microsoft.549981C3F5F10';
+	'Microsoft.Windows.DevHome';
+	'MicrosoftCorporationII.MicrosoftFamily';
+	'Microsoft.WindowsFeedbackHub';
+	'Microsoft.MixedReality.Portal';
+	'Microsoft.BingNews';
+	'Microsoft.Office.OneNote';
+	'Microsoft.MSPaint';
+	'Microsoft.People';
+	'Microsoft.PowerAutomateDesktop';
+	'Microsoft.SkypeApp';
+	'Microsoft.Wallet';
+	'Microsoft.BingWeather';
+	'Microsoft.Xbox.TCUI';
+	'Microsoft.XboxApp';
+	'Microsoft.XboxGameOverlay';
+	'Microsoft.XboxGamingOverlay';
+	'Microsoft.XboxIdentityProvider';
+	'Microsoft.XboxSpeechToTextOverlay';
+	'Microsoft.GamingApp';
+	'Microsoft.YourPhone';
+);
+$getCommand = {
+  Get-AppxProvisionedPackage -Online;
+};
+$filterCommand = {
+  $_.DisplayName -eq $selector;
+};
+$removeCommand = {
+  [CmdletBinding()]
+  param(
+    [Parameter( Mandatory, ValueFromPipeline )]
+    $InputObject
+  );
+  process {
+    $InputObject | Remove-AppxProvisionedPackage -AllUsers -Online -ErrorAction 'Continue';
+  }
+};
+$type = 'Package';
+$logfile = 'C:\Windows\Setup\Scripts\RemovePackages.log';
+&amp; {
+	$installed = &amp; $getCommand;
+	foreach( $selector in $selectors ) {
+		$result = [ordered] @{
+			Selector = $selector;
+		};
+		$found = $installed | Where-Object -FilterScript $filterCommand;
+		if( $found ) {
+			$result.Output = $found | &amp; $removeCommand;
+			if( $? ) {
+				$result.Message = "$type removed.";
+			} else {
+				$result.Message = "$type not removed.";
+				$result.Error = $Error[0];
+			}
+		} else {
+			$result.Message = "$type not installed.";
+		}
+		$result | ConvertTo-Json -Depth 3 -Compress;
+	}
+} *&gt;&amp;1 | Out-String -Width 1KB -Stream &gt;&gt; $logfile;
+		</File>
+		<File path="C:\Windows\Setup\Scripts\RemoveFeatures.ps1">
+$selectors = @(
+	'MicrosoftWindowsPowerShellV2Root';
+);
+$getCommand = {
+  Get-WindowsOptionalFeature -Online | Where-Object -Property 'State' -NotIn -Value @(
+    'Disabled';
+    'DisabledWithPayloadRemoved';
+  );
+};
+$filterCommand = {
+  $_.FeatureName -eq $selector;
+};
+$removeCommand = {
+  [CmdletBinding()]
+  param(
+    [Parameter( Mandatory, ValueFromPipeline )]
+    $InputObject
+  );
+  process {
+    $InputObject | Disable-WindowsOptionalFeature -Online -Remove -NoRestart -ErrorAction 'Continue';
+  }
+};
+$type = 'Feature';
+$logfile = 'C:\Windows\Setup\Scripts\RemoveFeatures.log';
+&amp; {
+	$installed = &amp; $getCommand;
+	foreach( $selector in $selectors ) {
+		$result = [ordered] @{
+			Selector = $selector;
+		};
+		$found = $installed | Where-Object -FilterScript $filterCommand;
+		if( $found ) {
+			$result.Output = $found | &amp; $removeCommand;
+			if( $? ) {
+				$result.Message = "$type removed.";
+			} else {
+				$result.Message = "$type not removed.";
+				$result.Error = $Error[0];
+			}
+		} else {
+			$result.Message = "$type not installed.";
+		}
+		$result | ConvertTo-Json -Depth 3 -Compress;
+	}
+} *&gt;&amp;1 | Out-String -Width 1KB -Stream &gt;&gt; $logfile;
+		</File>
+		<File path="C:\Windows\Setup\Scripts\Wifi.xml">
+&lt;WLANProfile xmlns="http://www.microsoft.com/networking/WLAN/profile/v1"&gt;
+	&lt;name&gt;__THE_WIFI_NAME__&lt;/name&gt;
+	&lt;SSIDConfig&gt;
+		&lt;SSID&gt;
+			&lt;hex&gt;5F5F5448455F574946495F4E414D455F5F&lt;/hex&gt;
+			&lt;name&gt;__THE_WIFI_NAME__&lt;/name&gt;
+		&lt;/SSID&gt;
+	&lt;/SSIDConfig&gt;
+	&lt;connectionType&gt;ESS&lt;/connectionType&gt;
+	&lt;connectionMode&gt;auto&lt;/connectionMode&gt;
+	&lt;MSM&gt;
+		&lt;security&gt;
+			&lt;authEncryption&gt;
+				&lt;authentication&gt;WPA2PSK&lt;/authentication&gt;
+				&lt;encryption&gt;AES&lt;/encryption&gt;
+				&lt;useOneX&gt;false&lt;/useOneX&gt;
+			&lt;/authEncryption&gt;
+			&lt;sharedKey&gt;
+				&lt;keyType&gt;passPhrase&lt;/keyType&gt;
+				&lt;protected&gt;false&lt;/protected&gt;
+				&lt;keyMaterial&gt;__THE_WIFI_PASSWORD__&lt;/keyMaterial&gt;
+			&lt;/sharedKey&gt;
+		&lt;/security&gt;
+	&lt;/MSM&gt;
+&lt;/WLANProfile&gt;
+		</File>
+		<File path="C:\Windows\Setup\Scripts\TaskbarLayoutModification.xml">
+&lt;LayoutModificationTemplate xmlns="http://schemas.microsoft.com/Start/2014/LayoutModification" xmlns:defaultlayout="http://schemas.microsoft.com/Start/2014/FullDefaultLayout" xmlns:start="http://schemas.microsoft.com/Start/2014/StartLayout" xmlns:taskbar="http://schemas.microsoft.com/Start/2014/TaskbarLayout" Version="1"&gt;
+	&lt;CustomTaskbarLayoutCollection PinListPlacement="Replace"&gt;
+		&lt;defaultlayout:TaskbarLayout&gt;
+			&lt;taskbar:TaskbarPinList&gt;
+				&lt;taskbar:DesktopApp DesktopApplicationLinkPath="#leaveempty" /&gt;
+			&lt;/taskbar:TaskbarPinList&gt;
+		&lt;/defaultlayout:TaskbarLayout&gt;
+	&lt;/CustomTaskbarLayoutCollection&gt;
+&lt;/LayoutModificationTemplate&gt;
+		</File>
+		<File path="C:\Windows\Setup\Scripts\UnlockStartLayout.vbs">
+HKU = &amp;H80000003
+Set reg = GetObject("winmgmts://./root/default:StdRegProv")
+Set fso = CreateObject("Scripting.FileSystemObject")
+
+If reg.EnumKey(HKU, "", sids) = 0 Then
+	If Not IsNull(sids) Then
+		For Each sid In sids
+			key = sid + "\Software\Policies\Microsoft\Windows\Explorer"
+			name = "LockedStartLayout"
+			If reg.GetDWORDValue(HKU, key, name, existing) = 0 Then
+				reg.SetDWORDValue HKU, key, name, 0
+			End If
+		Next
+	End If
+End If
+		</File>
+		<File path="C:\Windows\Setup\Scripts\UnlockStartLayout.xml">
+&lt;Task version="1.2" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task"&gt;
+	&lt;Triggers&gt;
+		&lt;EventTrigger&gt;
+			&lt;Enabled&gt;true&lt;/Enabled&gt;
+			&lt;Subscription&gt;&amp;lt;QueryList&amp;gt;&amp;lt;Query Id="0" Path="Application"&amp;gt;&amp;lt;Select Path="Application"&amp;gt;*[System[Provider[@Name='UnattendGenerator'] and EventID=1]]&amp;lt;/Select&amp;gt;&amp;lt;/Query&amp;gt;&amp;lt;/QueryList&amp;gt;&lt;/Subscription&gt;
+		&lt;/EventTrigger&gt;
+	&lt;/Triggers&gt;
+	&lt;Principals&gt;
+		&lt;Principal id="Author"&gt;
+			&lt;UserId&gt;S-1-5-18&lt;/UserId&gt;
+			&lt;RunLevel&gt;LeastPrivilege&lt;/RunLevel&gt;
+		&lt;/Principal&gt;
+	&lt;/Principals&gt;
+	&lt;Settings&gt;
+		&lt;MultipleInstancesPolicy&gt;IgnoreNew&lt;/MultipleInstancesPolicy&gt;
+		&lt;DisallowStartIfOnBatteries&gt;false&lt;/DisallowStartIfOnBatteries&gt;
+		&lt;StopIfGoingOnBatteries&gt;false&lt;/StopIfGoingOnBatteries&gt;
+		&lt;AllowHardTerminate&gt;true&lt;/AllowHardTerminate&gt;
+		&lt;StartWhenAvailable&gt;false&lt;/StartWhenAvailable&gt;
+		&lt;RunOnlyIfNetworkAvailable&gt;false&lt;/RunOnlyIfNetworkAvailable&gt;
+		&lt;IdleSettings&gt;
+			&lt;StopOnIdleEnd&gt;true&lt;/StopOnIdleEnd&gt;
+			&lt;RestartOnIdle&gt;false&lt;/RestartOnIdle&gt;
+		&lt;/IdleSettings&gt;
+		&lt;AllowStartOnDemand&gt;true&lt;/AllowStartOnDemand&gt;
+		&lt;Enabled&gt;true&lt;/Enabled&gt;
+		&lt;Hidden&gt;false&lt;/Hidden&gt;
+		&lt;RunOnlyIfIdle&gt;false&lt;/RunOnlyIfIdle&gt;
+		&lt;WakeToRun&gt;false&lt;/WakeToRun&gt;
+		&lt;ExecutionTimeLimit&gt;PT72H&lt;/ExecutionTimeLimit&gt;
+		&lt;Priority&gt;7&lt;/Priority&gt;
+	&lt;/Settings&gt;
+	&lt;Actions Context="Author"&gt;
+		&lt;Exec&gt;
+			&lt;Command&gt;C:\Windows\System32\wscript.exe&lt;/Command&gt;
+			&lt;Arguments&gt;C:\Windows\Setup\Scripts\UnlockStartLayout.vbs&lt;/Arguments&gt;
+		&lt;/Exec&gt;
+	&lt;/Actions&gt;
+&lt;/Task&gt;
+		</File>
+		<File path="C:\Windows\Setup\Scripts\TurnOffSystemSounds.ps1">
+$excludes = Get-ChildItem -LiteralPath 'Registry::HKU\DefaultUser\AppEvents\EventLabels' |
+    Where-Object -FilterScript { ($_ | Get-ItemProperty).ExcludeFromCPL -eq 1; } |
+    Select-Object -ExpandProperty 'PSChildName';
+Get-ChildItem -Path 'Registry::HKU\DefaultUser\AppEvents\Schemes\Apps\*\*' |
+    Where-Object -Property 'PSChildName' -NotIn $excludes |
+    Get-ChildItem -Include '.Current' | Set-ItemProperty -Name '(Default)' -Value '';
+		</File>
+		<File path="C:\Windows\Setup\Scripts\SetStartPins.ps1">
+$json = '{"pinnedList":[]}';
+if( [System.Environment]::OSVersion.Version.Build -lt 20000 ) {
+	return;
+}
+$key = 'Registry::HKLM\SOFTWARE\Microsoft\PolicyManager\current\device\Start';
+New-Item -Path $key -ItemType 'Directory' -ErrorAction 'SilentlyContinue';
+Set-ItemProperty -LiteralPath $key -Name 'ConfigureStartPins' -Value $json -Type 'String';
+		</File>
+		<File path="C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\LayoutModification.xml">
+&lt;LayoutModificationTemplate Version="1" xmlns="http://schemas.microsoft.com/Start/2014/LayoutModification"&gt;
+	&lt;LayoutOptions StartTileGroupCellWidth="6" /&gt;
+	&lt;DefaultLayoutOverride&gt;
+		&lt;StartLayoutCollection&gt;
+			&lt;StartLayout GroupCellWidth="6" xmlns="http://schemas.microsoft.com/Start/2014/FullDefaultLayout" /&gt;
+		&lt;/StartLayoutCollection&gt;
+	&lt;/DefaultLayoutOverride&gt;
+&lt;/LayoutModificationTemplate&gt;
+		</File>
+		<File path="C:\Windows\Setup\Scripts\SetColorTheme.ps1">
+$lightThemeSystem = 0;
+$lightThemeApps = 0;
+$accentColorOnStart = 0;
+$enableTransparency = 0;
+$htmlAccentColor = '#0078D4';
+&amp; {
+	$params = @{
+		LiteralPath = 'Registry::HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize';
+		Force = $true;
+		Type = 'DWord';
+	};
+	Set-ItemProperty @params -Name 'SystemUsesLightTheme' -Value $lightThemeSystem;
+	Set-ItemProperty @params -Name 'AppsUseLightTheme' -Value $lightThemeApps;
+	Set-ItemProperty @params -Name 'ColorPrevalence' -Value $accentColorOnStart;
+	Set-ItemProperty @params -Name 'EnableTransparency' -Value $enableTransparency;
+};
+&amp; {
+	Add-Type -AssemblyName 'System.Drawing';
+	$accentColor = [System.Drawing.ColorTranslator]::FromHtml( $htmlAccentColor );
+
+	function ConvertTo-DWord {
+		param(
+			[System.Drawing.Color]
+			$Color
+		);
+						
+		[byte[]] $bytes = @(
+			$Color.R;
+			$Color.G;
+			$Color.B;
+			$Color.A;
+		);
+		return [System.BitConverter]::ToUInt32( $bytes, 0); 
+	}
+
+	$startColor = [System.Drawing.Color]::FromArgb( 0xD2, $accentColor );
+	Set-ItemProperty -LiteralPath 'Registry::HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Accent' -Name 'StartColorMenu' -Value( ConvertTo-DWord -Color $accentColor ) -Type 'DWord' -Force;
+	Set-ItemProperty -LiteralPath 'Registry::HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Accent' -Name 'AccentColorMenu' -Value( ConvertTo-DWord -Color $accentColor ) -Type 'DWord' -Force;
+	Set-ItemProperty -LiteralPath 'Registry::HKCU\Software\Microsoft\Windows\DWM' -Name 'AccentColor' -Value( ConvertTo-DWord -Color $accentColor ) -Type 'DWord' -Force;
+	$params = @{
+		LiteralPath = 'Registry::HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Accent';
+		Name = 'AccentPalette';
+	};
+	$palette = Get-ItemPropertyValue @params;
+	$index = 20;
+	$palette[ $index++ ] = $accentColor.R;
+	$palette[ $index++ ] = $accentColor.G;
+	$palette[ $index++ ] = $accentColor.B;
+	$palette[ $index++ ] = $accentColor.A;
+	Set-ItemProperty @params -Value $palette -Type 'Binary' -Force;
+};
+		</File>
+		<File path="C:\Windows\Setup\Scripts\SetWallpaper.ps1">
+Add-Type -TypeDefinition '
+	using System.Drawing;
+	using System.Runtime.InteropServices;
+	
+	public static class WallpaperSetter {
+		[DllImport("user32.dll")]
+		private static extern bool SetSysColors(
+			int cElements, 
+			int[] lpaElements,
+			int[] lpaRgbValues
+		);
+
+		[DllImport("user32.dll")]
+		private static extern bool SystemParametersInfo(
+			uint uiAction,
+			uint uiParam,
+			string pvParam,
+			uint fWinIni
+		);
+
+		public static void SetDesktopBackground(Color color) {
+			SystemParametersInfo(20, 0, "", 0);
+			SetSysColors(1, new int[] { 1 }, new int[] { ColorTranslator.ToWin32(color) });
+		}
+
+		public static void SetDesktopImage(string file) {
+			SystemParametersInfo(20, 0, file, 0);
+		}
+	}
+' -ReferencedAssemblies 'System.Drawing';
+
+function Set-WallpaperColor {
+	param(
+		[string]
+		$HtmlColor
+	);
+
+	$color = [System.Drawing.ColorTranslator]::FromHtml( $HtmlColor );
+	[WallpaperSetter]::SetDesktopBackground( $color );
+	Set-ItemProperty -Path 'Registry::HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Wallpapers' -Name 'BackgroundType' -Type 'DWord' -Value 1 -Force;
+	Set-ItemProperty -Path 'Registry::HKCU\Control Panel\Desktop' -Name 'WallPaper' -Type 'String' -Value '' -Force;
+	Set-ItemProperty -Path 'Registry::HKCU\Control Panel\Colors' -Name 'Background' -Type 'String' -Value "$($color.R) $($color.G) $($color.B)" -Force;
+}
+
+function Set-WallpaperImage {
+	param(
+		[string]
+		$LiteralPath
+	);
+
+	if( $LiteralPath | Test-Path ) {
+		[WallpaperSetter]::SetDesktopImage( $LiteralPath );
+		Set-ItemProperty -Path 'Registry::HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Wallpapers' -Name 'BackgroundType' -Type 'DWord' -Value 0 -Force;
+		Set-ItemProperty -Path 'Registry::HKCU\Control Panel\Desktop' -Name 'WallPaper' -Type 'String' -Value $LiteralPath -Force;
+	} else {
+		"Cannot use '$LiteralPath' as a desktop wallpaper because that file does not exist.";
+	}
+}
+Set-WallpaperColor -HtmlColor '#000000';
+		</File>
+		<File path="C:\Windows\Setup\Scripts\unattend-01.cmd">
+@REM These scripts will run in the system context, before user accounts are created.
+
+@REM powercfg.exe /HIBERNATE OFF
+		</File>
+		<File path="C:\Windows\Setup\Scripts\unattend-02.ps1">
+# These scripts will run in the system context, before user accounts are created.
+
+# Set-MpPreference -DisableRealtimeMonitoring $true;
+
+foreach ($file_path in @(
+		# "$env:PUBLIC" is the home directory of a generic, public user profile
+		"$env:PUBLIC\Desktop\desktop.ini", # desktop: delete annoying and useless desktop.ini hidden files
+		"$env:PUBLIC\Desktop\Microsoft Edge.lnk" # desktop: delete shortcut to Edge
+	)) {
+	if (Test-Path $file_path) {
+		Remove-Item -Force $file_path
+	}
+}
+		</File>
+		<File path="C:\Windows\Setup\Scripts\unattend-03.reg">
+Windows Registry Editor Version 5.00
+
+; These scripts will run in the system context, before user accounts are created.
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Remote Assistance]
+; "fAllowToGetHelp"=dword:00000000
+		</File>
+		<File path="C:\Windows\Setup\Scripts\unattend-04.vbs">
+' These scripts will run in the system context, before user accounts are created.
+
+' WScript.Echo "Hello!"
+		</File>
+		<File path="C:\Windows\Setup\Scripts\unattend-05.cmd">
+@REM These scripts will run when the first user logs on after Windows has been installed.
+
+@REM setx.exe DIRCMD "/A /O:GN /C /N"
+		</File>
+		<File path="C:\Windows\Setup\Scripts\unattend-06.ps1">
+# These scripts will run when the first user logs on after Windows has been installed.
+
+# Set-WinHomeLocation -GeoId 94;
+
+foreach ($file_path in @(
+		"$env:USERPROFILE\Desktop\desktop.ini" # desktop: delete annoying and useless desktop.ini hidden files
+		"$env:USERPROFILE\Desktop\Microsoft Edge.lnk" # desktop: delete shortcut to Edge
+	)) {
+	if (Test-Path $file_path) {
+		Remove-Item -Force $file_path
+	}
+}
+		</File>
+		<File path="C:\Windows\Setup\Scripts\unattend-07.reg">
+Windows Registry Editor Version 5.00
+
+; These scripts will run when the first user logs on after Windows has been installed.
+
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+; "ScreenSaverIsSecure"="1"
+
+; enable auto logon
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon]
+; remove logon count set by autounattend (but leave all other settings used to enable auto logon, whichever they are...)
+"AutoLogonCount"=-
+; "AutoAdminLogon"="1"
+; "DefaultUserName"="__THE_USER_NAME__"
+; "DefaultPassword"="__THE_USER_PASSWORD__"
+
+; enable verbose messages during startup/shutdown
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+"VerboseStatus"=dword:00000001
+"DisableStatusMessages"=-
+		</File>
+		<File path="C:\Windows\Setup\Scripts\unattend-08.vbs">
+' These scripts will run when the first user logs on after Windows has been installed.
+
+' WScript.Echo "Hello!"
+		</File>
+		<File path="C:\Windows\Setup\Scripts\unattend-09.cmd">
+@REM These scripts will run whenever a user logs on for the first time.
+
+@REM setx.exe DIRCMD "/A /O:GN /C /N"
+		</File>
+		<File path="C:\Windows\Setup\Scripts\unattend-0a.ps1">
+# These scripts will run whenever a user logs on for the first time.
+
+# Set-WinHomeLocation -GeoId 94;
+		</File>
+		<File path="C:\Windows\Setup\Scripts\unattend-0b.reg">
+Windows Registry Editor Version 5.00
+
+; These scripts will run whenever a user logs on for the first time.
+
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+; "ScreenSaverIsSecure"="1"
+		</File>
+		<File path="C:\Windows\Setup\Scripts\unattend-0c.vbs">
+' These scripts will run whenever a user logs on for the first time.
+
+' WScript.Echo "Hello!"
+		</File>
+		<File path="C:\Windows\Setup\Scripts\unattend-0d.reg">
+Windows Registry Editor Version 5.00
+
+; Use these scripts to modify the default user's registry hive.
+
+[HKEY_USERS\DefaultUser\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+; "ShowTaskViewButton"=dword:00000000
+		</File>
+		<File path="C:\Windows\Setup\Scripts\unattend-0e.cmd">
+@REM Use these scripts to modify the default user's registry hive.
+
+@REM reg.exe add "HKU\DefaultUser\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "ShowTaskViewButton" /t REG_DWORD /d 0 /f
+		</File>
+		<File path="C:\Windows\Setup\Scripts\unattend-0f.ps1">
+# Use these scripts to modify the default user's registry hive.
+
+# Set-ItemProperty -LiteralPath "Registry::HKU\DefaultUser\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ShowTaskViewButton" -Type "DWord" -Value 0;
+		</File>
+		<File path="C:\Windows\Setup\Scripts\Specialize.ps1">
+$scripts = @(
+	{
+		Remove-Item -LiteralPath 'Registry::HKLM\Software\Microsoft\WindowsUpdate\Orchestrator\UScheduler_Oobe\DevHomeUpdate' -Force -ErrorAction 'SilentlyContinue';
+	};
+	{
+		Remove-Item -LiteralPath 'C:\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\OneDrive.lnk', 'C:\Windows\System32\OneDriveSetup.exe', 'C:\Windows\SysWOW64\OneDriveSetup.exe' -ErrorAction 'Continue';
+	};
+	{
+		&amp; 'C:\Windows\Setup\Scripts\RemovePackages.ps1';
+	};
+	{
+		&amp; 'C:\Windows\Setup\Scripts\RemoveFeatures.ps1';
+	};
+	{
+		$name = 'WlanSvc';
+		$start = [datetime]::Now;
+		$timeout = $start.AddMinutes( 1 );
+		$params = @{
+		  Id = 1;
+		  ParentId = 0;
+		  Activity = "Waiting for service '${name}' to start.";
+		};
+		while( $true ) {
+			if( $service = Get-Service -Name $name -ErrorAction 'SilentlyContinue' ) {
+				if( $service.Status -eq 'Running' ) {
+					break;
+				}
+			}
+			if( [datetime]::Now -gt $timeout ) {
+				"Service '${name}' did not start in time." | Write-Warning;
+				break;
+			}
+			Write-Progress @params -PercentComplete $(
+				100 * ( [datetime]::Now - $start ).Ticks / ( $timeout - $start ).Ticks
+			);
+			Start-Sleep -Seconds 5;
+		}
+		Write-Progress @params -Completed;
+	};
+	{
+		netsh.exe wlan add profile filename="C:\Windows\Setup\Scripts\Wifi.xml" user=all;
+	};
+	{
+		netsh.exe wlan connect name="__THE_WIFI_NAME__" ssid="__THE_WIFI_NAME__";
+	};
+	{
+		net.exe accounts /maxpwage:UNLIMITED;
+	};
+	{
+		reg.exe add "HKLM\Software\Policies\Microsoft\Windows\CloudContent" /v "DisableCloudOptimizedContent" /t REG_DWORD /d 1 /f;
+		[System.Diagnostics.EventLog]::CreateEventSource( 'UnattendGenerator', 'Application' );
+	};
+	{
+		Register-ScheduledTask -TaskName 'UnlockStartLayout' -Xml $( Get-Content -LiteralPath 'C:\Windows\Setup\Scripts\UnlockStartLayout.xml' -Raw );
+	};
+	{
+		reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" /v SmartScreenEnabled /t REG_SZ /d "Off" /f;
+		reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WTDS\Components" /v ServiceEnabled /t REG_DWORD /d 0 /f;
+		reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WTDS\Components" /v NotifyMalicious /t REG_DWORD /d 0 /f;
+		reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WTDS\Components" /v NotifyPasswordReuse /t REG_DWORD /d 0 /f;
+		reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WTDS\Components" /v NotifyUnsafeApp /t REG_DWORD /d 0 /f;
+		reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Systray" /v HideSystray /t REG_DWORD /d 1 /f;
+	};
+	{
+		reg.exe add "HKLM\SYSTEM\CurrentControlSet\Control\FileSystem" /v LongPathsEnabled /t REG_DWORD /d 1 /f
+	};
+	{
+		netsh.exe advfirewall firewall set rule group="@FirewallAPI.dll,-28752" new enable=Yes;
+		reg.exe add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f;
+	};
+	{
+		Remove-Item -LiteralPath 'C:\Users\Public\Desktop\Microsoft Edge.lnk' -ErrorAction 'SilentlyContinue' -Verbose;
+	};
+	{
+		reg.exe add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Power" /v HiberbootEnabled /t REG_DWORD /d 0 /f;
+	};
+	{
+		reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Dsh" /v AllowNewsAndInterests /t REG_DWORD /d 0 /f;
+	};
+	{
+		reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\LogonUI\BootAnimation" /v DisableStartupSound /t REG_DWORD /d 1 /f;
+		reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\EditionOverrides" /v UserSetting_DisableStartupSound /t REG_DWORD /d 1 /f;
+	};
+	{
+		reg.exe add "HKLM\Software\Policies\Microsoft\Windows\CloudContent" /v "DisableWindowsConsumerFeatures" /t REG_DWORD /d 1 /f;
+	};
+	{
+		reg.exe add "HKLM\Software\Policies\Microsoft\Edge" /v HideFirstRunExperience /t REG_DWORD /d 1 /f;
+	};
+	{
+		reg.exe add "HKLM\Software\Policies\Microsoft\Edge\Recommended" /v BackgroundModeEnabled /t REG_DWORD /d 0 /f;
+		reg.exe add "HKLM\Software\Policies\Microsoft\Edge\Recommended" /v StartupBoostEnabled /t REG_DWORD /d 0 /f;
+	};
+	{
+		&amp; 'C:\Windows\Setup\Scripts\SetStartPins.ps1';
+	};
+	{
+		reg.exe add "HKU\.DEFAULT\Control Panel\Accessibility\StickyKeys" /v Flags /t REG_SZ /d 10 /f;
+	};
+	{
+		C:\Windows\Setup\Scripts\unattend-01.cmd;
+	};
+	{
+		&amp; 'C:\Windows\Setup\Scripts\unattend-02.ps1';
+	};
+	{
+		reg.exe import "C:\Windows\Setup\Scripts\unattend-03.reg";
+	};
+	{
+		cscript.exe //E:vbscript "C:\Windows\Setup\Scripts\unattend-04.vbs";
+	};
+);
+
+&amp; {
+  [float] $complete = 0;
+  [float] $increment = 100 / $scripts.Count;
+  foreach( $script in $scripts ) {
+    Write-Progress -Id 0 -Activity 'Running scripts to customize your Windows installation. Do not close this window.' -PercentComplete $complete;
+    '*** Will now execute command &#xAB;{0}&#xBB;.' -f $(
+      $script.ToString().Trim() -replace '\s+', ' ' -replace '^(.{99})(.+)$', '$1&#x2026;';
+    );
+    $start = [datetime]::Now;
+    &amp; $script;
+    '*** Finished executing command after {0:0} ms.' -f [datetime]::Now.Subtract( $start ).TotalMilliseconds;
+    "`r`n" * 3;
+    $complete += $increment;
+  }
+} *&gt;&amp;1 | Out-String -Width 1KB -Stream &gt;&gt; "C:\Windows\Setup\Scripts\Specialize.log";
+		</File>
+		<File path="C:\Windows\Setup\Scripts\UserOnce.ps1">
+$scripts = @(
+	{
+		Get-AppxPackage -Name 'Microsoft.Windows.Ai.Copilot.Provider' | Remove-AppxPackage;
+	};
+	{
+		[System.Diagnostics.EventLog]::WriteEntry( 'UnattendGenerator', "User '$env:USERNAME' has requested to unlock the Start menu layout.", [System.Diagnostics.EventLogEntryType]::Information, 1 );
+	};
+	{
+		Remove-Item -LiteralPath "${env:USERPROFILE}\Desktop\Microsoft Edge.lnk" -ErrorAction 'SilentlyContinue' -Verbose;
+	};
+	{
+		Set-ItemProperty -LiteralPath 'Registry::HKCU\AppEvents\Schemes' -Name '(Default)' -Type 'String' -Value '.None';
+	};
+	{
+		reg.exe add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /ve /f;
+	};
+	{
+		Set-ItemProperty -LiteralPath 'Registry::HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced' -Name 'LaunchTo' -Type 'DWord' -Value 1;
+	};
+	{
+		Set-ItemProperty -LiteralPath 'Registry::HKCU\Software\Microsoft\Windows\CurrentVersion\Search' -Name 'SearchboxTaskbarMode' -Type 'DWord' -Value 0;
+	};
+	{
+		&amp; 'C:\Windows\Setup\Scripts\SetColorTheme.ps1';
+	};
+	{
+		&amp; 'C:\Windows\Setup\Scripts\SetWallpaper.ps1';
+	};
+	{
+		C:\Windows\Setup\Scripts\unattend-09.cmd;
+	};
+	{
+		&amp; 'C:\Windows\Setup\Scripts\unattend-0a.ps1';
+	};
+	{
+		reg.exe import "C:\Windows\Setup\Scripts\unattend-0b.reg";
+	};
+	{
+		cscript.exe //E:vbscript "C:\Windows\Setup\Scripts\unattend-0c.vbs";
+	};
+	{
+		Get-Process -Name 'explorer' -ErrorAction 'SilentlyContinue' | Where-Object -FilterScript {
+			$_.SessionId -eq ( Get-Process -Id $PID ).SessionId;
+		} | Stop-Process -Force;
+	};
+);
+
+&amp; {
+  [float] $complete = 0;
+  [float] $increment = 100 / $scripts.Count;
+  foreach( $script in $scripts ) {
+    Write-Progress -Id 0 -Activity 'Running scripts to configure this user account. Do not close this window.' -PercentComplete $complete;
+    '*** Will now execute command &#xAB;{0}&#xBB;.' -f $(
+      $script.ToString().Trim() -replace '\s+', ' ' -replace '^(.{99})(.+)$', '$1&#x2026;';
+    );
+    $start = [datetime]::Now;
+    &amp; $script;
+    '*** Finished executing command after {0:0} ms.' -f [datetime]::Now.Subtract( $start ).TotalMilliseconds;
+    "`r`n" * 3;
+    $complete += $increment;
+  }
+} *&gt;&amp;1 | Out-String -Width 1KB -Stream &gt;&gt; "$env:TEMP\UserOnce.log";
+		</File>
+		<File path="C:\Windows\Setup\Scripts\DefaultUser.ps1">
+$scripts = @(
+	{
+		reg.exe add "HKU\DefaultUser\Software\Policies\Microsoft\Windows\WindowsCopilot" /v TurnOffWindowsCopilot /t REG_DWORD /d 1 /f;
+	};
+	{
+		Remove-ItemProperty -LiteralPath 'Registry::HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Run' -Name 'OneDriveSetup' -Force -ErrorAction 'Continue';
+	};
+	{
+		reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\GameDVR" /v AppCaptureEnabled /t REG_DWORD /d 0 /f;
+	};
+	{
+		reg.exe add "HKU\DefaultUser\Software\Policies\Microsoft\Windows\Explorer" /v "StartLayoutFile" /t REG_SZ /d "C:\Windows\Setup\Scripts\TaskbarLayoutModification.xml" /f;
+		reg.exe add "HKU\DefaultUser\Software\Policies\Microsoft\Windows\Explorer" /v "LockedStartLayout" /t REG_DWORD /d 1 /f;
+	};
+	{
+		reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "HideFileExt" /t REG_DWORD /d 0 /f;
+	};
+	{
+		reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "Hidden" /t REG_DWORD /d 1 /f;
+	};
+	{
+		reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "ShowSuperHidden" /t REG_DWORD /d 1 /f;
+	};
+	{
+		reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ShowTaskViewButton /t REG_DWORD /d 0 /f;
+	};
+	{
+		reg.exe add "HKU\DefaultUser\Software\Microsoft\Edge\SmartScreenEnabled" /ve /t REG_DWORD /d 0 /f;
+		reg.exe add "HKU\DefaultUser\Software\Microsoft\Edge\SmartScreenPuaEnabled" /ve /t REG_DWORD /d 0 /f;
+		reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\AppHost" /v EnableWebContentEvaluation /t REG_DWORD /d 0 /f;
+		reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\AppHost" /v PreventOverride /t REG_DWORD /d 0 /f;
+	};
+	{
+		&amp; 'C:\Windows\Setup\Scripts\TurnOffSystemSounds.ps1';
+	};
+	{
+		$names = @(
+		  'ContentDeliveryAllowed';
+		  'FeatureManagementEnabled';
+		  'OEMPreInstalledAppsEnabled';
+		  'PreInstalledAppsEnabled';
+		  'PreInstalledAppsEverEnabled';
+		  'SilentInstalledAppsEnabled';
+		  'SoftLandingEnabled';
+		  'SubscribedContentEnabled';
+		  'SubscribedContent-310093Enabled';
+		  'SubscribedContent-338387Enabled';
+		  'SubscribedContent-338388Enabled';
+		  'SubscribedContent-338389Enabled';
+		  'SubscribedContent-338393Enabled';
+		  'SubscribedContent-353694Enabled';
+		  'SubscribedContent-353696Enabled';
+		  'SubscribedContent-353698Enabled';
+		  'SystemPaneSuggestionsEnabled';
+		);
+		
+		foreach( $name in $names ) {
+		  reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v $name /t REG_DWORD /d 0 /f;
+		}
+	};
+	{
+		reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v TaskbarAl /t REG_DWORD /d 0 /f;
+	};
+	{
+		reg.exe add "HKU\DefaultUser\Software\Policies\Microsoft\Windows\Explorer" /v DisableSearchBoxSuggestions /t REG_DWORD /d 1 /f;
+	};
+	{
+		reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\TaskbarDeveloperSettings" /v TaskbarEndTask /t REG_DWORD /d 1 /f;
+	};
+	{
+		reg.exe add "HKU\DefaultUser\Control Panel\Accessibility\StickyKeys" /v Flags /t REG_SZ /d 10 /f;
+	};
+	{
+		reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\DWM" /v ColorPrevalence /t REG_DWORD /d 0 /f;
+	};
+	{
+		reg.exe import "C:\Windows\Setup\Scripts\unattend-0d.reg";
+	};
+	{
+		C:\Windows\Setup\Scripts\unattend-0e.cmd;
+	};
+	{
+		&amp; 'C:\Windows\Setup\Scripts\unattend-0f.ps1';
+	};
+	{
+		reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\RunOnce" /v "UnattendedSetup" /t REG_SZ /d "powershell.exe -WindowStyle \""Normal\"" -ExecutionPolicy \""Unrestricted\"" -NoProfile -File \""C:\Windows\Setup\Scripts\UserOnce.ps1\""" /f;
+	};
+);
+
+&amp; {
+  [float] $complete = 0;
+  [float] $increment = 100 / $scripts.Count;
+  foreach( $script in $scripts ) {
+    Write-Progress -Id 0 -Activity 'Running scripts to modify the default user&#x2019;&#x2019;s registry hive. Do not close this window.' -PercentComplete $complete;
+    '*** Will now execute command &#xAB;{0}&#xBB;.' -f $(
+      $script.ToString().Trim() -replace '\s+', ' ' -replace '^(.{99})(.+)$', '$1&#x2026;';
+    );
+    $start = [datetime]::Now;
+    &amp; $script;
+    '*** Finished executing command after {0:0} ms.' -f [datetime]::Now.Subtract( $start ).TotalMilliseconds;
+    "`r`n" * 3;
+    $complete += $increment;
+  }
+} *&gt;&amp;1 | Out-String -Width 1KB -Stream &gt;&gt; "C:\Windows\Setup\Scripts\DefaultUser.log";
+		</File>
+		<File path="C:\Windows\Setup\Scripts\FirstLogon.ps1">
+$scripts = @(
+	{
+		Set-ItemProperty -LiteralPath 'Registry::HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon' -Name 'AutoLogonCount' -Type 'DWord' -Force -Value 0;
+	};
+	{
+		cmd.exe /c "rmdir C:\Windows.old";
+	};
+	{
+		C:\Windows\Setup\Scripts\unattend-05.cmd;
+	};
+	{
+		&amp; 'C:\Windows\Setup\Scripts\unattend-06.ps1';
+	};
+	{
+		reg.exe import "C:\Windows\Setup\Scripts\unattend-07.reg";
+	};
+	{
+		cscript.exe //E:vbscript "C:\Windows\Setup\Scripts\unattend-08.vbs";
+	};
+	{
+		Remove-Item -LiteralPath @(
+		  'C:\Windows\Panther\unattend.xml';
+		  'C:\Windows\Panther\unattend-original.xml';
+		  'C:\Windows\Setup\Scripts\Wifi.xml';
+		) -Force -ErrorAction 'SilentlyContinue' -Verbose;
+	};
+);
+
+&amp; {
+  [float] $complete = 0;
+  [float] $increment = 100 / $scripts.Count;
+  foreach( $script in $scripts ) {
+    Write-Progress -Id 0 -Activity 'Running scripts to finalize your Windows installation. Do not close this window.' -PercentComplete $complete;
+    '*** Will now execute command &#xAB;{0}&#xBB;.' -f $(
+      $script.ToString().Trim() -replace '\s+', ' ' -replace '^(.{99})(.+)$', '$1&#x2026;';
+    );
+    $start = [datetime]::Now;
+    &amp; $script;
+    '*** Finished executing command after {0:0} ms.' -f [datetime]::Now.Subtract( $start ).TotalMilliseconds;
+    "`r`n" * 3;
+    $complete += $increment;
+  }
+} *&gt;&amp;1 | Out-String -Width 1KB -Stream &gt;&gt; "C:\Windows\Setup\Scripts\FirstLogon.log";
+		</File>
+	</Extensions>
+</unattend>
